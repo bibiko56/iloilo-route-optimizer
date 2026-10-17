@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b88c26a3553b91eb39b8dc6b3d239155 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b88c26a3553b91eb39b8dc6b3d239155" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b88c26a3553b91eb39b8dc6b3d239155 = L.map(
+                "map_b88c26a3553b91eb39b8dc6b3d239155",
+                {
+                    center: [10.6928, 122.5644],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6bd6bab1820558cba73ba33e0bbd0c63 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6bd6bab1820558cba73ba33e0bbd0c63.addTo(map_b88c26a3553b91eb39b8dc6b3d239155);
+        
+    
+            var poly_line_f4e2073fbeec1bc8389b6fc24dfe63ae = L.polyline(
+                [[10.71, 122.54], [10.7085, 122.54], [10.707, 122.54], [10.7055, 122.54], [10.704, 122.54], [10.704, 122.5415], [10.704, 122.543], [10.7025, 122.543], [10.701, 122.543], [10.701, 122.5445], [10.701, 122.546], [10.701, 122.5475], [10.701, 122.549], [10.701, 122.5505], [10.701, 122.552], [10.6995, 122.552], [10.698, 122.552], [10.6965, 122.552], [10.6965, 122.5535]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_b88c26a3553b91eb39b8dc6b3d239155);
+        
+    
+        var popup_3d729ac1724081e83917d69616e6eef3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a09b4452728b061f94ca64e2bb76d1d4 = $(`<div id="html_a09b4452728b061f94ca64e2bb76d1d4" style="width: 100.0%; height: 100.0%;">Optimized Delivery Route</div>`)[0];
+                popup_3d729ac1724081e83917d69616e6eef3.setContent(html_a09b4452728b061f94ca64e2bb76d1d4);
+            
+        
+
+        poly_line_f4e2073fbeec1bc8389b6fc24dfe63ae.bindPopup(popup_3d729ac1724081e83917d69616e6eef3)
+        ;
+
+        
+    
+    
+            var marker_c871ff8e39102aea5da06095978ca7ea = L.marker(
+                [10.71, 122.54],
+                {
+}
+            ).addTo(map_b88c26a3553b91eb39b8dc6b3d239155);
+        
+    
+            var icon_c4b06e2123ee9579809fb4d8f7064118 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4d54b9f5af994445f3f2e45ab60606c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24942af17cb9724562bf0a0855ad2247 = $(`<div id="html_24942af17cb9724562bf0a0855ad2247" style="width: 100.0%; height: 100.0%;">Depot: SM City Iloilo Hub</div>`)[0];
+                popup_4d54b9f5af994445f3f2e45ab60606c0.setContent(html_24942af17cb9724562bf0a0855ad2247);
+            
+        
+
+        marker_c871ff8e39102aea5da06095978ca7ea.bindPopup(popup_4d54b9f5af994445f3f2e45ab60606c0)
+        ;
+
+        
+    
+    
+                marker_c871ff8e39102aea5da06095978ca7ea.setIcon(icon_c4b06e2123ee9579809fb4d8f7064118);
+            
+    
+            var marker_504550ab3e408178be63a8a60abe40f1 = L.marker(
+                [10.6965, 122.5535],
+                {
+}
+            ).addTo(map_b88c26a3553b91eb39b8dc6b3d239155);
+        
+    
+            var icon_d03da01a8c04e4d7d65d590c5492aa9d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4fa6bc8f696b1c2637bc262437dcb0a6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a87a7da2e879112678b1531d052f9c43 = $(`<div id="html_a87a7da2e879112678b1531d052f9c43" style="width: 100.0%; height: 100.0%;">Drop-off: Jaro Delivery Point</div>`)[0];
+                popup_4fa6bc8f696b1c2637bc262437dcb0a6.setContent(html_a87a7da2e879112678b1531d052f9c43);
+            
+        
+
+        marker_504550ab3e408178be63a8a60abe40f1.bindPopup(popup_4fa6bc8f696b1c2637bc262437dcb0a6)
+        ;
+
+        
+    
+    
+                marker_504550ab3e408178be63a8a60abe40f1.setIcon(icon_d03da01a8c04e4d7d65d590c5492aa9d);
+            
+</script>
+</html>

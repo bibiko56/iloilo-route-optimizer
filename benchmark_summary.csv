@@ -1,0 +1,5 @@
+algorithm,pairs,found_pct,optimal_pct,avg_distance_km,avg_time_min,avg_nodes_expanded,avg_runtime_ms,nodes_saved_vs_dijkstra_pct,avg_gap_vs_mapbox_pct
+BFS,40,100.0,5.0,5.195,8.85,2019,2.35,-4.7,5.11
+Greedy best-first,40,100.0,7.5,5.189,9.33,66,0.28,95.2,4.02
+Dijkstra,40,100.0,100.0,4.581,6.44,2029,3.51,0.0,-6.23
+A*,40,100.0,100.0,4.581,6.44,1076,3.44,50.5,-6.23

@@ -1,0 +1,7 @@
+@"
+.streamlit/secrets.toml
+__pycache__/
+cache/
+*.pyc
+.venv/
+"@ | Set-Content -Encoding ascii .gitignore

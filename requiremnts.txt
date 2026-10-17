@@ -1,0 +1,7 @@
+streamlit
+streamlit-folium
+streamlit-searchbox
+folium
+requests
+rapidfuzz
+pandas

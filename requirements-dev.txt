@@ -1,0 +1,6 @@
+# Extra packages for building the data files and running the benchmark locally.
+# Not needed to run (or deploy) the app itself.
+-r requirements.txt
+osmnx
+networkx
+matplotlib
