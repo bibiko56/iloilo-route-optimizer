@@ -18,6 +18,7 @@ st.set_page_config(page_title="Iloilo Route Optimizer", layout="wide")
 
 NAVY = "#023e8a"
 WHITE = "#ffffff"
+TINT = "#E6EEF9"  # pale tint of the navy, used as the background of the input boxes
 
 HERE = Path(__file__).parent
 PLACES_FILE = HERE / "iloilo_places.json"
@@ -64,6 +65,13 @@ st.markdown(
         border: 1px solid {NAVY}; border-radius: 10px; padding: 10px 16px;
     }}
     [data-testid="stExpander"] {{ border: 1px solid {NAVY}; border-radius: 10px; }}
+    [data-baseweb="select"] > div {{
+        background-color: {TINT}; border: 1px solid {NAVY}; border-radius: 8px;
+    }}
+    div[role="radiogroup"] {{
+        background-color: {TINT}; border: 1px solid {NAVY}; border-radius: 8px;
+        padding: 8px 14px; width: fit-content;
+    }}
     .route-box {{
         border: 1px solid {NAVY}; border-radius: 10px; padding: 10px 16px;
         color: {NAVY}; font-size: 0.95rem; line-height: 1.35;
@@ -258,6 +266,18 @@ for k, v in defaults.items():
     if k not in st.session_state:
         st.session_state[k] = v
 
+# Styling for the two search boxes (they render inside their own frame, so page CSS cannot reach them)
+SEARCHBOX_STYLE = {
+    "searchbox": {
+        "control": {
+            "backgroundColor": TINT,
+            "border": f"1px solid {NAVY}",
+            "borderRadius": "8px",
+            "&:hover": {"border": f"1px solid {NAVY}"},
+        },
+    }
+}
+
 st.title("Iloilo Route Optimizer")
 st.caption("Search a place or click the map to set the start and drop-off.")
 
@@ -269,7 +289,7 @@ s_col, g_col = st.columns(2)
 with s_col:
     start_pick = st_searchbox(
         search_places, label="Start", placeholder="Type a place, e.g. Jaro, SM, CPU",
-        key="start_searchbox",
+        key="start_searchbox", style_overrides=SEARCHBOX_STYLE,
     )
 # Only apply a pick when it is NEW, so it never overwrites later map clicks.
 if start_pick and start_pick != st.session_state.last_start_pick:
@@ -283,7 +303,7 @@ if start_pick and start_pick != st.session_state.last_start_pick:
 with g_col:
     goal_pick = st_searchbox(
         search_places, label="Drop-off", placeholder="Type a place, e.g. Megaworld, UPV",
-        key="goal_searchbox",
+        key="goal_searchbox", style_overrides=SEARCHBOX_STYLE,
     )
 if goal_pick and goal_pick != st.session_state.last_goal_pick:
     st.session_state.last_goal_pick = goal_pick
@@ -550,12 +570,12 @@ else:
     for name in ("BFS", "Greedy best-first", "Dijkstra", "A*"):
         r = res[name]
         if not r["found"]:
-            rows.append({"Algorithm": name, "Distance (km)": "no path", "Time (min)": "-",
+            rows.append({"Algorithm": name, "Distance (km)": "no path", "Time (min)": "n/a",
                          "Nodes expanded": f"{r['expanded']:,}", "Runtime (ms)": f"{r['runtime_ms']:.1f}",
-                         "Distance gap vs Mapbox": "-"})
+                         "Distance gap vs Mapbox": "n/a"})
             continue
         km = r["distance_m"] / 1000.0
-        gap = f"{(km - primary_distance) / primary_distance * 100:+.1f}%" if primary_distance else "-"
+        gap = f"{(km - primary_distance) / primary_distance * 100:+.1f}%" if primary_distance else "n/a"
         rows.append({
             "Algorithm": name,
             "Distance (km)": f"{km:.2f}",
@@ -570,9 +590,9 @@ else:
             "Algorithm": "Mapbox (baseline)",
             "Distance (km)": f"{primary_distance:.2f}",
             "Time (min)": f"{primary_duration:.1f}",
-            "Nodes expanded": "-",
-            "Runtime (ms)": "-",
-            "Distance gap vs Mapbox": "-",
+            "Nodes expanded": "n/a",
+            "Runtime (ms)": "n/a",
+            "Distance gap vs Mapbox": "n/a",
         })
 
     st.table(pd.DataFrame(rows).set_index("Algorithm"))
