@@ -6,7 +6,7 @@ against Mapbox routing on the OpenStreetMap road network.
 
 Case study for ITPD 6 - Artificial Intelligence 1 (Search Algorithms: route optimization).
 
-Live demo: <paste your .streamlit.app link here>
+Live demo: https://iloilo-route-optimizer.streamlit.app/
 
 ## What it does
 
